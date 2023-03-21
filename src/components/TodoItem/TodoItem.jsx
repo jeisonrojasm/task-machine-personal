@@ -6,15 +6,15 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const TodoItem = ({ id, text }) => {
 
-    const [done, setDone] = useState(false);
 
-    const { data, setData } = useContext(TodoContext)
+    const { data, updateData } = useContext(TodoContext)
+    const [done, setDone] = useState(data.done);
 
     const onCheckClick = () => {
         const newData = [...data];
         const [dataToBeModified] = newData.filter(data => data.id === id);
         dataToBeModified.done = !dataToBeModified.done;
-        setData(newData);
+        updateData(newData);
         setDone(dataToBeModified.done);
     };
 

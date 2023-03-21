@@ -17,7 +17,7 @@ export const TodoCounter = () => {
         setDoneTodos(data.filter(data => data.done).length);
         setTotalTodos(data.length);
         // eslint-disable-next-line
-    }, [doneTodos, totalTodos]);
+    }, []);
 
     return (
         <div className='todo-counter'>
