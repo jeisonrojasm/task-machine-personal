@@ -11,7 +11,7 @@ export const TodoList = () => {
     return (
         <div className='todo-list'>
             {
-                searchedData.map(data => <TodoItem key={data.id} text={data.text} />)
+                searchedData.map(data => <TodoItem key={data.id} text={data.text} id={data.id} />)
             }
         </div>
     )

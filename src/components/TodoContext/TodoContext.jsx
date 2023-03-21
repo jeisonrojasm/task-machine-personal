@@ -8,10 +8,10 @@ export const TodoProvider = ({ children }) => {
 
     const [searchedValue, setSearchedValue] = useState('');
 
-    const { parsedData: data } = useLocalStorage('TODOS_DATA_V1', []);
+    const { data, setData } = useLocalStorage('TODOS_DATA_V1', []);
 
     return (
-        <TodoContext.Provider value={{ data, searchedValue, setSearchedValue }}>
+        <TodoContext.Provider value={{ data,setData, searchedValue, setSearchedValue }}>
             {children}
         </TodoContext.Provider>
     );

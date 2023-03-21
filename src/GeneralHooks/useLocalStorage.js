@@ -1,14 +1,21 @@
-export const useLocalStorage = (key, initialValue) => {
-    let parsedData = JSON.parse(localStorage.getItem(key));
+import { useEffect, useState } from "react";
 
-    if (!parsedData) {
-        localStorage.setItem(key, JSON.stringify(initialValue));
-        parsedData = JSON.parse(localStorage.getItem(key));
-    } else {
-        parsedData = JSON.parse(localStorage.getItem(key));
-    }
+export const useLocalStorage = (key, initialValue) => {
+
+    const [data, setData] = useState(JSON.parse(localStorage.getItem(key)));
+
+    useEffect(() => {
+        if (!data) {
+            localStorage.setItem(key, JSON.stringify(initialValue));
+            setData(JSON.parse(localStorage.getItem(key)));
+        } else {
+            setData(JSON.parse(localStorage.getItem(key)));
+        }
+    }, []);
+
 
     return {
-        parsedData,
+        data,
+        setData,
     };
 };

@@ -1,23 +1,29 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import './TodoItem.css';
 
 import { TodoContext } from '../TodoContext/TodoContext';
 
-export const TodoItem = ({ text }) => {
+export const TodoItem = ({ id, text }) => {
 
-    const { data } = useContext(TodoContext)
+    const [done, setDone] = useState(false);
+
+    const { data, setData } = useContext(TodoContext)
 
     const onCheckClick = () => {
-        console.log('click');
+        const newData = [...data];
+        const [dataToBeModified] = newData.filter(data => data.id === id);
+        dataToBeModified.done = !dataToBeModified.done;
+        setData(newData);
+        setDone(dataToBeModified.done);
     };
 
     return (
         <div className='todo-item'>
-            <span className='todo-item__check' onClick={onCheckClick}>
+            <span className={`todo-item__check ${done ? 'todo-item__check--done' : 'todo-item__check--undone'}`} onClick={onCheckClick}>
                 ✔
             </span>
-            <p className='todo-item__text'>
+            <p className={`todo-item__text ${done ? 'todo-item__text--done' : 'todo-item__text--undone'}`}>
                 {text}
             </p>
             <span className='todo-item__delete'>
