@@ -1,13 +1,17 @@
+import './TodoCounter.css';
+
 import { LightMode } from '../LightMode/LightMode';
 
 export const TodoCounter = () => {
     return (
-        <div>
-            <div>
-                <p>Has completado 2 de 4 tareas</p>
+        <div className='todo-counter'>
+            <div className='todo-counter__counter'>
+                <p>
+                    Has completado <span className='todo-counter__counter--span'>2</span> de <span className='todo-counter__counter--span'>4</span> tareas
+                </p>
                 <LightMode />
             </div>
-            <progress value="50" max="100"></progress>
+            <progress className='todo-counter__progress' value="50" max="100">50%</progress>
         </div>
     )
 }

@@ -1,7 +1,9 @@
+import './LightMode.css';
+
 export const LightMode = () => {
     return (
-        <div>
-            <div></div>
+        <div className="light-mode">
+            <div className="light-mode__toggle">🌕</div>
         </div>
     )
 }

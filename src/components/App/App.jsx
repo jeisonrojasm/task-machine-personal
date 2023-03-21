@@ -1,12 +1,14 @@
-import { TodoHeader } from "../TodoHeader/TodoHeader";
-import { TodoCounter } from "../TodoCounter/TodoCounter";
-import { TodoSearch } from "../TodoSearch/TodoSearch";
-import { TodoList } from "../TodoList/TodoList";
-import { AddTodoButton } from "../AddTodoButton/AddTodoButton";
+import './App.css';
+
+import { TodoHeader } from '../TodoHeader/TodoHeader';
+import { TodoCounter } from '../TodoCounter/TodoCounter';
+import { TodoSearch } from '../TodoSearch/TodoSearch';
+import { TodoList } from '../TodoList/TodoList';
+import { AddTodoButton } from '../AddTodoButton/AddTodoButton';
 
 export const App = () => {
     return (
-        <div>
+        <div className="app">
             <TodoHeader />
             <TodoCounter />
             <TodoSearch />

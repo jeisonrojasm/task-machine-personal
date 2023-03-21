@@ -1,11 +1,15 @@
+import './TodoHeader.css';
+
 export const TodoHeader = () => {
     return (
-        <div>
-            <p>
+        <div className='todo-header'>
+            <h1 className='todo-header__title'>
                 Task <br />
-                <span>Machine</span>
-            </p>
-            <span>
+                <span className='todo-header__title--span'>
+                    Machine
+                </span>
+            </h1>
+            <span className='todo-header__icon'>
                 🐱‍💻
             </span>
         </div>

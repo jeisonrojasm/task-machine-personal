@@ -1,13 +1,16 @@
+import './TodoItem.css';
+
 export const TodoItem = () => {
     return (
-        <div>
-            <span>
+        <div className='todo-item'>
+            <span className='todo-item__check'>
                 ✔
             </span>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <p className='todo-item__text'>
+                {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. */}
+                Tarea
             </p>
-            <span>
+            <span className='todo-item__delete'>
                 🗑
             </span>
         </div>

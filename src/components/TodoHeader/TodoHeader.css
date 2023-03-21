@@ -1,0 +1,35 @@
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;    
+}
+
+.todo-header__title {
+    font-size: var(--primary-font-size__mb);
+    font-weight: 800;
+    color: var(--secondary-light-font-color);
+}
+
+.todo-header__title--span {
+    color: var(--primary-light-font-color);
+}
+
+.todo-header__icon {
+    font-size: var(--primary-font-size__mb);
+}
+
+@media (min-width:768px) {
+    .todo-header {
+        margin-bottom: 5rem;
+    }
+
+    .todo-header__title {
+        font-size: var(--primary-font-size__dk);
+    }
+
+    .todo-header__icon {
+        font-size: var(--primary-font-size__dk);
+    }
+}

@@ -1,0 +1,21 @@
+.app {
+    font-family: var(--font-family);
+    font-size: var(--tertiary-font-size__mb);
+    max-width: 76.8rem;
+    margin: 0 auto;
+    background-color: var(--tertiary-light-color);
+    min-height: 95vh;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .app {
+        font-size: var(--tertiary-font-size__dk);
+        padding: 2rem;
+        min-height: 92vh;
+        -webkit-box-shadow: 0px 0px 24px 14px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 24px 14px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 24px 14px rgba(0, 0, 0, 0.75);
+    }
+}

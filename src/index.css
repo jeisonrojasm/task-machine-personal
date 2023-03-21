@@ -1,3 +1,35 @@
+:root {
+  /* FONT */
+  --font-family: 'Manrope', sans-serif;
+
+  --primary-font-size__mb: 4.7rem;
+  --primary-font-size__dk: 8rem;
+  --secondary-font-size__mb: 1.7rem;
+  --secondary-font-size__dk: 2rem;
+  --tertiary-font-size__mb: 1.5rem;
+  --tertiary-font-size__dk: 1.7rem;
+
+  --primary-light-font-color: #646366;
+  --secondary-light-font-color: #050505;
+
+  --primary-dark-font-color: #7e8083;
+  --secondary-dark-font-color: #f8f9fb;
+
+  /* BACKGROUND */
+  --primary-light-color: #616265;
+  --secondary-light-color: #e5e6eb;
+  --tertiary-light-color: #ffffff;
+
+  --primary-dark-color: #050505;
+  --secondary-dark-color: #242527;
+  --tertiary-dark-color: #333436;
+
+  /* MISCELANEOUS */
+  --danger-color: #eb2d45;
+  --info-color: #1e76ea;
+  --success-color: #28a745;
+}
+
 /* RESET CSS */
 
 html {
@@ -91,6 +123,16 @@ video {
   vertical-align: baseline;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 article,
 aside,
 details,
@@ -130,4 +172,11 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+
+/* STYLES */
+body {
+  background-color: var(--primary-light-color);
+  padding: 0.5rem;
 }
