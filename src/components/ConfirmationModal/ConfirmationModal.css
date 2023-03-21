@@ -1,0 +1,87 @@
+.confirmation-modal {
+    font-family: var(--font-family);
+    text-align: center;
+    background-color: #05050580;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-modal__form {
+    background-color: var(--tertiary-light-color);
+    width: 28rem;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 0rem 2rem;
+    box-shadow: 0px 0px 24px 14px rgba(0, 0, 0, 0.75);
+    border-radius: 2rem;
+}
+
+.confirmation-modal__title {
+    font-size: var(--primary-font-size__mb);
+    text-transform: uppercase;
+}
+
+.confirmation-modal__info {
+    font-size: var(--secondary-font-size__mb);
+    background-color: var(--secondary-light-color);
+    padding: 1.5rem;
+}
+
+.confirmation-modal__buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.confirmation-modal__button {
+    font-size: var(--secondary-font-size__mb);
+    width: 10rem;
+    min-height: 3.5rem;
+    text-transform: capitalize;
+    border: none;
+    color: var(--tertiary-light-color);
+    border-radius: 1rem;
+}
+
+.confirmation-modal__button--cancel {
+    background-color: var(--danger-color);
+    box-shadow: 0px 2px 5px 0px var(--danger-color);    
+}
+
+.confirmation-modal__button--accept {
+    background-color: var(--success-color);
+    box-shadow: 0px 2px 5px 0px var(--success-color);
+}
+
+@media (min-width:768px) {
+    .confirmation-modal__form {
+        width: 56rem;
+        min-height: 40rem;
+        padding: 0rem 4rem;
+    }
+
+    .confirmation-modal__title {
+        font-size: var(--primary-font-size__dk);
+    }
+
+    .confirmation-modal__info {
+        font-size: var(--secondary-font-size__dk);
+        padding: 3.5rem;
+    }
+
+    .confirmation-modal__button {
+        font-size: var(--secondary-font-size__dk);
+        width: 15rem;
+        min-height: 5rem;
+        border-radius: 1.5rem;
+    }
+}
