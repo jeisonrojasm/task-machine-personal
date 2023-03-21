@@ -15,6 +15,13 @@ export const TodoItem = ({ id, text, done }) => {
         saveData(auxData);
     };
 
+    const onDeleteClick = () => {
+        const auxData = [...data];
+        let indexToBeModified = auxData.findIndex(data => data.id === id);
+        auxData.splice(indexToBeModified, 1);
+        saveData(auxData);
+    };
+
     return (
         <div className='todo-item'>
             <span className={`todo-item__check ${done ? 'todo-item__check--done' : 'todo-item__check--undone'}`} onClick={onCheckClick}>
@@ -23,7 +30,7 @@ export const TodoItem = ({ id, text, done }) => {
             <p className={`todo-item__text ${done ? 'todo-item__text--done' : 'todo-item__text--undone'}`}>
                 {text}
             </p>
-            <span className='todo-item__delete'>
+            <span className='todo-item__delete' onClick={onDeleteClick}>
                 🗑
             </span>
         </div>

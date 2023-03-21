@@ -17,7 +17,7 @@ export const TodoCounter = () => {
         <div className='todo-counter'>
             <div className='todo-counter__counter'>
                 <p>
-                    Has completado <span className='todo-counter__counter--span'>{doneTodos}</span> de <span className='todo-counter__counter--span'>{totalTodos}</span> {totalTodos < 2 ? 'tarea' : 'tareas'}
+                    Has completado <span className='todo-counter__counter--span'>{doneTodos}</span> de <span className='todo-counter__counter--span'>{totalTodos}</span> {totalTodos === 1 ? 'tarea' : 'tareas'}
                 </p>
                 <LightMode />
             </div>
