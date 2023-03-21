@@ -1,14 +1,24 @@
+import { useContext } from 'react';
+
 import './TodoItem.css';
 
-export const TodoItem = () => {
+import { TodoContext } from '../TodoContext/TodoContext';
+
+export const TodoItem = ({ text }) => {
+
+    const { data } = useContext(TodoContext)
+
+    const onCheckClick = () => {
+        console.log('click');
+    };
+
     return (
         <div className='todo-item'>
-            <span className='todo-item__check'>
+            <span className='todo-item__check' onClick={onCheckClick}>
                 ✔
             </span>
             <p className='todo-item__text'>
-                {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. */}
-                Tarea
+                {text}
             </p>
             <span className='todo-item__delete'>
                 🗑
