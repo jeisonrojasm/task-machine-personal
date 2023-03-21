@@ -1,6 +1,22 @@
+import { useContext } from 'react';
+import { TodoContext } from '../TodoContext/TodoContext';
 import './ConfirmationModal.css';
 
 export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn }) => {
+
+    const { setToggleModal, setDeleteItem } = useContext(TodoContext);
+
+    const onCancelClick = (event) => {
+        event.preventDefault();
+        setToggleModal(false);
+    };
+
+    const onAcceptClick = (event) => {
+        event.preventDefault();
+        setDeleteItem(true);
+        setToggleModal(false);
+    };
+
     return (
         <div className='confirmation-modal'>
             <form className='confirmation-modal__form'>
@@ -15,10 +31,10 @@ export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, accept
                         <p className='confirmation-modal__info'>{info}</p>
                 }
                 <div className='confirmation-modal__buttons'>
-                    <button className='confirmation-modal__button confirmation-modal__button--cancel'>
+                    <button className='confirmation-modal__button confirmation-modal__button--cancel' onClick={onCancelClick}>
                         {cancelTextBtn}
                     </button>
-                    <button type="submit" className='confirmation-modal__button confirmation-modal__button--accept'>
+                    <button type="submit" className='confirmation-modal__button confirmation-modal__button--accept' onClick={onAcceptClick}>
                         {acceptTextBtn}
                     </button>
                 </div>

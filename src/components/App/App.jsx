@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+
 import './App.css';
 
 import { TodoHeader } from '../TodoHeader/TodoHeader';
@@ -8,7 +10,12 @@ import { AddTodoButton } from '../AddTodoButton/AddTodoButton';
 import { DeleteTodoPortal } from '../DeleteTodoModal/DeleteTodoPortal';
 import { DeleteTodoModal } from '../DeleteTodoModal/DeleteTodoModal';
 
+import { TodoContext } from '../TodoContext/TodoContext';
+
 export const App = () => {
+
+    const { toggleModal } = useContext(TodoContext);
+
     return (
         <div className="app">
             <TodoHeader />
@@ -17,7 +24,9 @@ export const App = () => {
             <TodoList />
             <AddTodoButton />
             <DeleteTodoPortal>
-                <DeleteTodoModal />
+                {
+                    toggleModal && <DeleteTodoModal />
+                }
             </DeleteTodoPortal>
         </div>
     )

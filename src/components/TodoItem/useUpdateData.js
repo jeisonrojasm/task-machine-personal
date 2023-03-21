@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { TodoContext } from '../TodoContext/TodoContext';
 
 export const useUpdateData = (id) => {
-    const { data, saveData } = useContext(TodoContext);
+    const { data, saveData, setToggleModal, deleteItem, setDeleteItem } = useContext(TodoContext);
 
     const onCheckClick = () => {
         const auxData = [...data];
@@ -13,10 +13,14 @@ export const useUpdateData = (id) => {
     };
 
     const onDeleteClick = () => {
-        const auxData = [...data];
-        let indexToBeModified = auxData.findIndex(data => data.id === id);
-        auxData.splice(indexToBeModified, 1);
-        saveData(auxData);
+        setToggleModal(true);
+        if (deleteItem) {
+            const auxData = [...data];
+            let indexToBeModified = auxData.findIndex(data => data.id === id);
+            auxData.splice(indexToBeModified, 1);
+            saveData(auxData);
+            setDeleteItem(false);
+        }
     };
 
     return [
