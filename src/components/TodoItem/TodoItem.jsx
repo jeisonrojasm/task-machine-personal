@@ -1,26 +1,10 @@
-import { useContext } from 'react';
-
 import './TodoItem.css';
 
-import { TodoContext } from '../TodoContext/TodoContext';
+import { useUpdateData } from './useUpdateData';
 
 export const TodoItem = ({ id, text, done }) => {
 
-    const { data, saveData } = useContext(TodoContext);
-
-    const onCheckClick = () => {
-        const auxData = [...data];
-        let indexToBeModified = auxData.findIndex(data => data.id === id);
-        auxData[indexToBeModified].done = !auxData[indexToBeModified].done;
-        saveData(auxData);
-    };
-
-    const onDeleteClick = () => {
-        const auxData = [...data];
-        let indexToBeModified = auxData.findIndex(data => data.id === id);
-        auxData.splice(indexToBeModified, 1);
-        saveData(auxData);
-    };
+    const [onCheckClick, onDeleteClick] = useUpdateData(id);
 
     return (
         <div className='todo-item'>
