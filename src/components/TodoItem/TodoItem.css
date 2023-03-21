@@ -7,14 +7,20 @@
 }
 
 .todo-item__check {
-    background-color: var(--secondary-light-color);
     border: solid 0.1rem var(--primary-light-color);
     color: var(--primary-light-font-color);
 }
 
+.todo-item__check--undone {
+    background-color: var(--secondary-light-color);
+}
+
+.todo-item__check--done {
+    background-color: var(--success-color);
+}
+
 .todo-item__text {
     width: 100%;
-    background-color: var(--secondary-light-color);
     display: flex;
     align-items: center;
     min-height: 3rem;
@@ -22,6 +28,14 @@
     padding: 1rem 0;
     padding-left: 1rem;
     margin: 0 0.5rem;
+}
+
+.todo-item__text--undone {
+    background-color: var(--secondary-light-color);
+}
+
+.todo-item__text--done {
+    background-color: var(--info-color);
 }
 
 .todo-item__delete {
