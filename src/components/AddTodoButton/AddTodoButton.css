@@ -27,6 +27,7 @@
 .add-todo-button__span {
     color: var(--tertiary-light-color);
     font-size: var(--primary-font-size__mb);
+    user-select: none;
 }
 
 @media (min-width:768px) {

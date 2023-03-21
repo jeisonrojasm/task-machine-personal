@@ -4,9 +4,9 @@ import './TodoItem.css';
 
 import { TodoContext } from '../TodoContext/TodoContext';
 
-export const TodoItem = ({ id, text }) => {
+export const TodoItem = ({ id, text, done }) => {
 
-    const { data, saveData } = useContext(TodoContext)
+    const { data, saveData } = useContext(TodoContext);
 
     const onCheckClick = () => {
         const auxData = [...data];
@@ -17,10 +17,10 @@ export const TodoItem = ({ id, text }) => {
 
     return (
         <div className='todo-item'>
-            <span className='todo-item__check' onClick={onCheckClick}>
+            <span className={`todo-item__check ${done ? 'todo-item__check--done' : 'todo-item__check--undone'}`} onClick={onCheckClick}>
                 ✔
             </span>
-            <p className='todo-item__text'>
+            <p className={`todo-item__text ${done ? 'todo-item__text--done' : 'todo-item__text--undone'}`}>
                 {text}
             </p>
             <span className='todo-item__delete'>
