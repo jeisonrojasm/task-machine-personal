@@ -1,27 +1,25 @@
-import { useContext } from 'react';
-import { TodoContext } from '../TodoContext/TodoContext';
 import './ConfirmationModal.css';
 
-export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn }) => {
+export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn, onCancelClick, onAcceptClick }) => {
 
-    const { setToggleModal, saveData, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted } = useContext(TodoContext);
+    
 
-    const onCancelClick = (event) => {
-        event.preventDefault();
-        setToggleModal(false);
-        setAuxData([]);
-        setIndexToBeDeleted(null);
-    };
+    // const onCancelClick = (event) => {
+    //     event.preventDefault();
+    //     setToggleModal(false);
+    //     setAuxData([]);
+    //     setIndexToBeDeleted(null);
+    // };
 
-    const onAcceptClick = (event) => {
-        event.preventDefault();
-        const newData = [...auxData];
-        newData.splice(indexToBeDeleted, 1);
-        saveData(newData);
-        setToggleModal(false);
-        setAuxData([]);
-        setIndexToBeDeleted(null);
-    };
+    // const onAcceptClick = (event) => {
+    //     event.preventDefault();
+    //     const newData = [...auxData];
+    //     newData.splice(indexToBeDeleted, 1);
+    //     saveData(newData);
+    //     setToggleModal(false);
+    //     setAuxData([]);
+    //     setIndexToBeDeleted(null);
+    // };
 
     return (
         <div className='confirmation-modal'>

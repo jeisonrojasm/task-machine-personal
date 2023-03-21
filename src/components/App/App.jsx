@@ -14,7 +14,7 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const App = () => {
 
-    const { toggleModal, auxData, indexToBeDeleted } = useContext(TodoContext);
+    const { toggleModal } = useContext(TodoContext);
 
     return (
         <div className="app">
