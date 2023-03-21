@@ -1,0 +1,31 @@
+.no-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.no-tasks__icon {
+    font-size: var(--primary-font-size__mb);
+    margin-bottom: 2rem;
+}
+
+.no-tasks__text {
+    text-align: center;
+    color: var(--primary-light-font-color);
+    font-size: var(--tertiary-font-size__mb);
+}
+
+.no-tasks__text--span{
+   font-weight: 800;
+}
+
+@media (min-width:768px) {
+    .no-tasks__icon {
+        font-size: var(--primary-font-size__dk);
+    }
+
+    .no-tasks__text {
+        font-size: var(--tertiary-font-size__dk);
+    }
+}
