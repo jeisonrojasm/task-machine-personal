@@ -8,6 +8,7 @@ export const TodoItem = ({ id, text, done }) => {
 
     return (
         <div className='todo-item'>
+            
             <span className={`todo-item__check ${done ? 'todo-item__check--done' : 'todo-item__check--undone'}`} onClick={onCheckClick}>
                 ✔
             </span>

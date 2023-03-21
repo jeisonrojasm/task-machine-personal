@@ -14,8 +14,11 @@ export const TodoProvider = ({ children }) => {
 
     const [deleteItem, setDeleteItem] = useState(false);
 
+    const [auxData, setAuxData] = useState([]);
+    const [indexToBeDeleted, setIndexToBeDeleted] = useState(null);
+
     return (
-        <TodoContext.Provider value={{ data, saveData, searchedValue, setSearchedValue, toggleModal, setToggleModal, deleteItem, setDeleteItem }}>
+        <TodoContext.Provider value={{ data, saveData, searchedValue, setSearchedValue, toggleModal, setToggleModal, deleteItem, setDeleteItem, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted }}>
             {children}
         </TodoContext.Provider>
     );

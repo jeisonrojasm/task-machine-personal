@@ -4,17 +4,23 @@ import './ConfirmationModal.css';
 
 export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn }) => {
 
-    const { setToggleModal, setDeleteItem } = useContext(TodoContext);
+    const { setToggleModal, saveData, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted } = useContext(TodoContext);
 
     const onCancelClick = (event) => {
         event.preventDefault();
         setToggleModal(false);
+        setAuxData([]);
+        setIndexToBeDeleted(null);
     };
 
     const onAcceptClick = (event) => {
         event.preventDefault();
-        setDeleteItem(true);
+        const newData = [...auxData];
+        newData.splice(indexToBeDeleted, 1);
+        saveData(newData);
         setToggleModal(false);
+        setAuxData([]);
+        setIndexToBeDeleted(null);
     };
 
     return (
