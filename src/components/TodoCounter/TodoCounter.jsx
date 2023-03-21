@@ -10,14 +10,8 @@ export const TodoCounter = () => {
 
     const { data } = useContext(TodoContext);
 
-    const [doneTodos, setDoneTodos] = useState(0);
-    const [totalTodos, setTotalTodos] = useState(0);
-
-    useEffect(() => {
-        setDoneTodos(data.filter(data => data.done).length);
-        setTotalTodos(data.length);
-        // eslint-disable-next-line
-    }, []);
+    const doneTodos = data.filter(data => data.done).length;
+    const totalTodos = data.length;
 
     return (
         <div className='todo-counter'>

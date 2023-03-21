@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 import './TodoItem.css';
 
@@ -6,24 +6,21 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const TodoItem = ({ id, text }) => {
 
-
-    const { data, updateData } = useContext(TodoContext)
-    const [done, setDone] = useState(data.done);
+    const { data, saveData } = useContext(TodoContext)
 
     const onCheckClick = () => {
-        const newData = [...data];
-        const [dataToBeModified] = newData.filter(data => data.id === id);
-        dataToBeModified.done = !dataToBeModified.done;
-        updateData(newData);
-        setDone(dataToBeModified.done);
+        const auxData = [...data];
+        let indexToBeModified = auxData.findIndex(data => data.id === id);
+        auxData[indexToBeModified].done = !auxData[indexToBeModified].done;
+        saveData(auxData);
     };
 
     return (
         <div className='todo-item'>
-            <span className={`todo-item__check ${done ? 'todo-item__check--done' : 'todo-item__check--undone'}`} onClick={onCheckClick}>
+            <span className='todo-item__check' onClick={onCheckClick}>
                 ✔
             </span>
-            <p className={`todo-item__text ${done ? 'todo-item__text--done' : 'todo-item__text--undone'}`}>
+            <p className='todo-item__text'>
                 {text}
             </p>
             <span className='todo-item__delete'>
