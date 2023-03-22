@@ -9,8 +9,11 @@ import { TodoList } from '../TodoList/TodoList';
 import { AddTodoButton } from '../AddTodoButton/AddTodoButton';
 import { DeleteTodoPortal } from '../DeleteTodoModal/DeleteTodoPortal';
 import { DeleteTodoModal } from '../DeleteTodoModal/DeleteTodoModal';
+import { AddTodoPortal } from '../AddTodoModal/AddTodoPortal';
+import { AddTodoModal } from '../AddTodoModal/AddTodoModal';
 
 import { TodoContext } from '../TodoContext/TodoContext';
+
 
 export const App = () => {
 
@@ -28,6 +31,9 @@ export const App = () => {
                     toggleModal && <DeleteTodoModal />
                 }
             </DeleteTodoPortal>
+            <AddTodoPortal>
+                <AddTodoModal />
+            </AddTodoPortal>
         </div>
     )
 }

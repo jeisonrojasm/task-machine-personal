@@ -11,7 +11,7 @@ export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, accept
                 {
                     textArea
                         ?
-                        <textarea>{textArea}</textarea>
+                        <textarea placeholder={textArea}></textarea>
                         :
                         <p className='confirmation-modal__info'>{info}</p>
                 }
