@@ -17,7 +17,7 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const App = () => {
 
-    const { toggleDeleteTodoModal } = useContext(TodoContext);
+    const { toggleDeleteTodoModal, toggleAddTodoModal } = useContext(TodoContext);
 
     return (
         <div className="app">
@@ -32,7 +32,9 @@ export const App = () => {
                 }
             </DeleteTodoPortal>
             <AddTodoPortal>
-                {/* <AddTodoModal /> */}
+                {
+                    toggleAddTodoModal && <AddTodoModal />
+                }
             </AddTodoPortal>
         </div>
     )

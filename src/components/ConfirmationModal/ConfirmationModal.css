@@ -55,6 +55,17 @@
     text-transform: uppercase;
 }
 
+.confirmation-modal__textarea {
+    font-family: var(--font-family);
+    font-size: var(--secondary-font-size__mb);
+    background-color: var(--secondary-light-color);
+    outline: none;
+}
+
+.confirmation-modal__textarea:focus-within {
+    box-shadow: 0px 0px 8px 1px var(--info-color);
+}
+
 .confirmation-modal__info {
     font-size: var(--secondary-font-size__mb);
     background-color: var(--secondary-light-color);
@@ -103,6 +114,11 @@
 
     .confirmation-modal__title {
         font-size: var(--primary-font-size__dk);
+    }
+
+    .confirmation-modal__textarea {
+        font-size: var(--secondary-font-size__dk);
+        padding: 1rem;
     }
 
     .confirmation-modal__info {

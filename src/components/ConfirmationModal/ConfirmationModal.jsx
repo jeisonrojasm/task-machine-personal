@@ -1,6 +1,6 @@
 import './ConfirmationModal.css';
 
-export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn, onCancelClick, onAcceptClick }) => {
+export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, acceptTextBtn, onCancelClick, onAcceptClick, onChange }) => {
 
     return (
         <div className='confirmation-modal'>
@@ -11,7 +11,7 @@ export const ConfirmationModal = ({ title, info, textArea, cancelTextBtn, accept
                 {
                     textArea
                         ?
-                        <textarea placeholder={textArea}></textarea>
+                        <textarea placeholder={textArea} onChange={onChange} className='confirmation-modal__textarea'></textarea>
                         :
                         <p className='confirmation-modal__info'>{info}</p>
                 }
