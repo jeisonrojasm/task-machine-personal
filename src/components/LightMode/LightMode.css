@@ -1,11 +1,16 @@
 .light-mode {
     width: 6rem;
     height: 2.5rem;
-    background-color: var(--primary-light-color);
+    background-color: var(--primary-light-font-color);
     border-radius: 2rem;
     box-shadow: inset 5px 5px 8px -2px #000000, 0px 3px 4px 0px #000000;
     position: relative;
 }
+
+.light-mode--dark {
+    background-color: var(--primary-light-color);
+}
+
 
 .light-mode:hover {
     cursor: pointer;
@@ -14,7 +19,13 @@
 .light-mode__toggle {
     font-size: 1.8rem;
     position: absolute;
-    top: 0.3rem;
+    top: 0.35rem;
     left: 0.2rem;
     user-select: none;
+}
+
+.light-mode__toggle--dark {
+    font-size: 1.9rem;
+    top: 0.35rem;
+    left: 3.2rem;
 }

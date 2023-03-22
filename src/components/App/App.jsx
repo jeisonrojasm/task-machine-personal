@@ -17,25 +17,27 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const App = () => {
 
-    const { toggleDeleteTodoModal, toggleAddTodoModal } = useContext(TodoContext);
+    const { toggleDeleteTodoModal, toggleAddTodoModal, lightMode } = useContext(TodoContext);
 
     return (
-        <div className="app">
-            <TodoHeader />
-            <TodoCounter />
-            <TodoSearch />
-            <TodoList />
-            <AddTodoButton />
-            <DeleteTodoPortal>
-                {
-                    toggleDeleteTodoModal && <DeleteTodoModal />
-                }
-            </DeleteTodoPortal>
-            <AddTodoPortal>
-                {
-                    toggleAddTodoModal && <AddTodoModal />
-                }
-            </AddTodoPortal>
+        <div className={`sub-body ${!lightMode.mode && 'sub-body--dark'}`}>
+            <div className={`app ${!lightMode.mode && 'app--dark'}`}>
+                <TodoHeader />
+                <TodoCounter />
+                <TodoSearch />
+                <TodoList />
+                <AddTodoButton />
+                <DeleteTodoPortal>
+                    {
+                        toggleDeleteTodoModal && <DeleteTodoModal />
+                    }
+                </DeleteTodoPortal>
+                <AddTodoPortal>
+                    {
+                        toggleAddTodoModal && <AddTodoModal />
+                    }
+                </AddTodoPortal>
+            </div>
         </div>
     )
 }

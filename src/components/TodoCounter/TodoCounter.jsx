@@ -1,4 +1,4 @@
-import { useContext} from 'react';
+import { useContext } from 'react';
 
 import './TodoCounter.css';
 
@@ -8,16 +8,16 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const TodoCounter = () => {
 
-    const { data } = useContext(TodoContext);
+    const { data, lightMode } = useContext(TodoContext);
 
     const doneTodos = data.filter(data => data.done).length;
     const totalTodos = data.length;
 
     return (
         <div className='todo-counter'>
-            <div className='todo-counter__counter'>
+            <div className={`todo-counter__counter ${!lightMode.mode && 'todo-counter__counter--dark'}`}>
                 <p>
-                    Has completado <span className='todo-counter__counter--span'>{doneTodos}</span> de <span className='todo-counter__counter--span'>{totalTodos}</span> {totalTodos === 1 ? 'tarea' : 'tareas'}
+                    Has completado <span className={`todo-counter__counter--span ${!lightMode.mode && 'todo-counter__counter--span--dark'}`}>{doneTodos}</span> de <span className={`todo-counter__counter--span ${!lightMode.mode && 'todo-counter__counter--span--dark'}`}>{totalTodos}</span> {totalTodos === 1 ? 'tarea' : 'tareas'}
                 </p>
                 <LightMode />
             </div>

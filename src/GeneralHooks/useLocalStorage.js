@@ -18,8 +18,8 @@ export const useLocalStorage = (key, initialValue) => {
         setData(newValue);
     }
 
-    return {
+    return [
         data,
         saveData,
-    };
+    ];
 };

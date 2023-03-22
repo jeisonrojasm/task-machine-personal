@@ -8,8 +8,16 @@
     align-items: center;
 }
 
+.todo-counter__counter--dark{
+    color: var(--primary-dark-font-color);
+}
+
 .todo-counter__counter--span {
     font-weight: 800;
+}
+
+.todo-counter__counter--span--dark {
+    color: var(--secondary-light-font-color);
 }
 
 .todo-counter__progress {

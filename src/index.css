@@ -16,7 +16,7 @@
   --secondary-dark-font-color: #f8f9fb;
 
   /* BACKGROUND */
-  --primary-light-color: #616265;
+  --primary-light-color: #1e76ea;
   --secondary-light-color: #e5e6eb;
   --tertiary-light-color: #ffffff;
 
@@ -177,6 +177,5 @@ table {
 
 /* STYLES */
 body {
-  background-color: var(--primary-light-color);
-  padding: 0.5rem;
+  background-color: #000000;
 }

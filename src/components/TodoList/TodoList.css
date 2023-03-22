@@ -4,3 +4,7 @@
     padding: 1rem;
     margin-bottom: 2rem;
 }
+
+.todo-list--dark {
+    background-color: var(--tertiary-dark-color);
+}

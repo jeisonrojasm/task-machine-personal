@@ -16,7 +16,7 @@
 .confirmation-modal__form {
     background-color: var(--tertiary-light-color);
     width: 28rem;
-    min-height: 20rem;
+    min-height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -26,6 +26,10 @@
     border-radius: 2rem;
     animation-name: showModal;
     animation-duration: 600ms;
+}
+
+.confirmation-modal__form--dark {
+    background-color: var(--secondary-dark-color);
 }
 
 @keyframes showModal {
@@ -60,6 +64,17 @@
     font-size: var(--secondary-font-size__mb);
     background-color: var(--secondary-light-color);
     outline: none;
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+.confirmation-modal__textarea--dark {
+    background-color: var(--primary-dark-font-color);
+    color: var(--primary-dark-color);
+}
+
+.confirmation-modal__textarea--dark::placeholder {
+    color: var(--primary-dark-color);
 }
 
 .confirmation-modal__textarea:focus-within {
@@ -70,6 +85,12 @@
     font-size: var(--secondary-font-size__mb);
     background-color: var(--secondary-light-color);
     padding: 1.5rem;
+    border-radius: 2rem;
+}
+
+.confirmation-modal__info--dark {
+    background-color: var(--primary-dark-font-color);
+    color: var(--primary-dark-color);
 }
 
 .confirmation-modal__buttons {
