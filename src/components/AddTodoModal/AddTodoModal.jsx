@@ -23,7 +23,6 @@ export const AddTodoModal = () => {
     };
 
     const onChangeTextarea = (event) => {
-        console.log(event.target.value);
         setValueToAdd(event.target.value);
     };
 
