@@ -6,11 +6,11 @@ import { TodoContext } from '../TodoContext/TodoContext';
 
 export const DeleteTodoModal = () => {
 
-    const { setToggleModal, saveData, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted } = useContext(TodoContext);
+    const { setToggleDeleteTodoModal, saveData, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted } = useContext(TodoContext);
 
     const onCancelClick = (event) => {
         event.preventDefault();
-        setToggleModal(false);
+        setToggleDeleteTodoModal(false);
         setAuxData([]);
         setIndexToBeDeleted(null);
     };
@@ -20,7 +20,7 @@ export const DeleteTodoModal = () => {
         const newData = [...auxData];
         newData.splice(indexToBeDeleted, 1);
         saveData(newData);
-        setToggleModal(false);
+        setToggleDeleteTodoModal(false);
         setAuxData([]);
         setIndexToBeDeleted(null);
     };

@@ -10,7 +10,7 @@ export const TodoProvider = ({ children }) => {
 
     const { data, saveData } = useLocalStorage('TODOS_DATA_V1', []);
 
-    const [toggleModal, setToggleModal] = useState(false);
+    const [toggleDeleteTodoModal, setToggleDeleteTodoModal] = useState(false);
 
     const [deleteItem, setDeleteItem] = useState(false);
 
@@ -18,7 +18,7 @@ export const TodoProvider = ({ children }) => {
     const [indexToBeDeleted, setIndexToBeDeleted] = useState(null);
 
     return (
-        <TodoContext.Provider value={{ data, saveData, searchedValue, setSearchedValue, toggleModal, setToggleModal, deleteItem, setDeleteItem, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted }}>
+        <TodoContext.Provider value={{ data, saveData, searchedValue, setSearchedValue, toggleDeleteTodoModal, setToggleDeleteTodoModal, deleteItem, setDeleteItem, auxData, setAuxData, indexToBeDeleted, setIndexToBeDeleted }}>
             {children}
         </TodoContext.Provider>
     );
